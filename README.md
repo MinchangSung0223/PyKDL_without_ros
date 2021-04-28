@@ -59,3 +59,11 @@ Jacobian of q :  [[-4.58740820e-02 -5.50575998e-01  4.68956179e-03  1.74534945e-
  [ 1.00000000e+00  0.00000000e+00  9.53644664e-01  1.76754862e-01
    9.58424021e-01  2.37847389e-01]]
 ```
+
+#DOCKER
+```bash 
+docker pull tjdalsckd/cuda10_ubuntu18.04:latest
+xhost +local:root
+docker  run --rm -it --gpus all --net=host -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -e QT_X11_NO_MITSHM=1 tjdalsckd/cuda10_ubuntu18.04:latest bash
+
+```
